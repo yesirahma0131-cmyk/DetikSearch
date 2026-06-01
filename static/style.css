@@ -1,0 +1,201 @@
+body{
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #000224;
+}
+
+/* CONTAINER */
+
+.container{
+
+    width: 70%;
+
+    margin: auto;
+
+    margin-top: 60px;
+}
+
+/* LOGO */
+
+.logo{
+
+    text-align: center;
+
+    font-size: 80px;
+
+    margin-bottom: 30px;
+
+    color: #0066ff;
+
+    font-weight: bold;
+
+    font-family: Arial Black, sans-serif;
+}
+
+.logo span{
+
+    color: #0066ff;
+}
+
+/* SEARCH */
+
+.search-box{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.search-box input{
+
+    width: 75%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: rgb(255, 255, 255);
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-box button{
+
+    width: 55px;
+    height: 55px;
+
+    margin-left: 10px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #0066ff;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.search-box button:hover{
+
+    background: #0052cc;
+}
+
+/* RESULT INFO */
+
+.result-info{
+
+    margin-top: 25px;
+
+    color: #555;
+
+    font-size: 15px;
+}
+
+/* EVALUATION */
+
+.evaluation-box{
+
+    background: #ffffff;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin-top: 20px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.evaluation-box h3{
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+}
+
+.metrics{
+
+    display: flex;
+
+    gap: 50px;
+}
+
+.metric-item p{
+
+    margin-top: 5px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+/* RESULT CARD */
+
+.result-card{
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.result-card h3{
+
+    margin-top: 0;
+
+    color: #0066ff;
+}
+
+.date{
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.score{
+
+    color: #444;
+
+    font-size: 14px;
+}
+
+.result-card a{
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: #0066ff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}

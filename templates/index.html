@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>detik.com Search</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGO -->
+
+    <h1 class="logo">
+        detik<span>.com</span>
+    </h1>
+
+    <!-- SEARCH -->
+
+    <form method="POST" class="search-box">
+
+        <input
+            type="text"
+            name="query"
+            placeholder="Cari berita detik.com..."
+            value="{{ query }}"
+            required>
+
+        <button type="submit">
+            🔍
+        </button>
+
+    </form>
+
+    <!-- HASIL -->
+
+    {% if results %}
+
+        <p class="result-info">
+
+            Ditemukan
+            <strong>{{ total_results }}</strong>
+            hasil untuk
+            "<strong>{{ query }}</strong>"
+
+        </p>
+
+        <!-- EVALUASI -->
+
+        <div class="evaluation-box">
+
+            <h3>Evaluasi Sistem</h3>
+
+            <div class="metrics">
+
+                <div class="metric-item">
+                    <strong>Precision</strong>
+                    <p>100%</p>
+                </div>
+
+                <div class="metric-item">
+                    <strong>Recall</strong>
+                    <p>90.91%</p>
+                </div>
+
+                <div class="metric-item">
+                    <strong>F1-Score</strong>
+                    <p>95.24%</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RESULT CARD -->
+
+        {% for item in results %}
+
+        <div class="result-card">
+
+            <h3>
+                {{ item.Judul }}
+            </h3>
+
+            <p class="date">
+                {{ item.Tanggal }}
+            </p>
+
+            <p class="score">
+                Similarity Score:
+                {{ "%.4f"|format(item.Score) }}
+            </p>
+
+            <a
+                href="{{ item.URL }}"
+                target="_blank">
+
+                Baca Berita
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
