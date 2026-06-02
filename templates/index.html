@@ -40,79 +40,95 @@
 
     </form>
 
-    <!-- HASIL -->
+    <!-- PESAN JIKA TIDAK ADA HASIL -->
 
-    {% if results %}
+{% if message %}
+<div class="no-result">
+    {{ message }}
+</div>
+{% endif %}
 
-        <p class="result-info">
+<!-- HASIL -->
 
-            Ditemukan
-            <strong>{{ total_results }}</strong>
-            hasil untuk
-            "<strong>{{ query }}</strong>"
+{% if results %}
 
-        </p>
+<p class="result-info">
 
-        <!-- EVALUASI -->
+    Ditemukan
+    <strong>{{ total_results }}</strong>
+    hasil untuk
+    "<strong>{{ query }}</strong>"
 
-        <div class="evaluation-box">
+</p>
 
-            <h3>Evaluasi Sistem</h3>
+<!-- EVALUASI -->
 
-            <div class="metrics">
+<div class="evaluation-box">
 
-                <div class="metric-item">
-                    <strong>Precision</strong>
-                    <p>100%</p>
-                </div>
+    <h3>Evaluasi Sistem</h3>
 
-                <div class="metric-item">
-                    <strong>Recall</strong>
-                    <p>90.91%</p>
-                </div>
+    <div class="metrics">
 
-                <div class="metric-item">
-                    <strong>F1-Score</strong>
-                    <p>95.24%</p>
-                </div>
-
-            </div>
-
+        <div class="metric-item">
+            <strong>Precision</strong>
+            <p>{{ precision }}%</p>
         </div>
 
-        <!-- RESULT CARD -->
-
-        {% for item in results %}
-
-        <div class="result-card">
-
-            <h3>
-                {{ item.Judul }}
-            </h3>
-
-            <p class="date">
-                {{ item.Tanggal }}
-            </p>
-
-            <p class="score">
-                Similarity Score:
-                {{ "%.4f"|format(item.Score) }}
-            </p>
-
-            <a
-                href="{{ item.URL }}"
-                target="_blank">
-
-                Baca Berita
-
-            </a>
-
+        <div class="metric-item">
+            <strong>Recall</strong>
+            <p>{{ recall }}%</p>
         </div>
 
-        {% endfor %}
+        <div class="metric-item">
+            <strong>F1-Score</strong>
+            <p>{{ f1 }}%</p>
+        </div>
 
-    {% endif %}
+    </div>
 
+</div>
+
+<!-- RESULT CARD -->
+
+{% for item in results %}
+
+<div class="result-card">
+
+    <div class="result-url">
+        {{ item.URL }}
+    </div>
+
+    <a
+        href="{{ item.URL }}"
+        target="_blank"
+        class="result-title">
+
+        {{ item.Judul }}
+
+    </a>
+
+    <div class="result-meta">
+
+        {{ item.Tanggal }}
+
+        &nbsp;&nbsp;•&nbsp;&nbsp;
+
+        Skor relevansi:
+        {{ "%.4f"|format(item.Score) }}
+
+    </div>
+
+    <p class="result-snippet">
+
+        {{ item.Snippet }}
+
+    </p>
+
+</div>
+
+{% endfor %}
+
+{% endif %}
 </div>
 
 </body>

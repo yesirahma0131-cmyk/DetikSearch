@@ -199,3 +199,83 @@ body{
 
     font-weight: bold;
 }
+
+/* TIDAK ADA HASIL */
+
+.no-result{
+
+    margin-top: 25px;
+
+    background: #fff3cd;
+
+    color: #856404;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ffeeba;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+/* HASIL PENCARIAN BARU */
+
+.result-url{
+
+    color: #0f9d58;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.result-title{
+
+    display: block;
+
+    color: #1a0dab;
+
+    font-size: 20px;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+.result-title:hover{
+
+    text-decoration: underline;
+}
+
+.result-meta{
+
+    color: #666;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.result-snippet{
+
+    color: #444;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    margin-bottom: 0;
+}
